@@ -13,8 +13,12 @@ Then, compute the gradient of each "Value" in the topological order.
 - Q: Engine only supports scalar values and how to extend it to support vector values?
 
 # Coding style
+- Use compose instead of inheritance to build "Module", "Layer", and "MLP".
+- The use of "**kwargs" in "Layer".
 
 # Mistakes I made
 **Engine**
 - Did not accumulate the gradient in the backward pass.
 - Did not set the gradient of the root node to 1.0 before the backward pass.
+- Did not set parameter "self" when define the class "Module".
+- Class Layer should return a Value instead of a list [Value] when noutput is 1.
