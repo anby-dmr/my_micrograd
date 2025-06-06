@@ -64,7 +64,7 @@ class Value:
         build_topo(self)
 
         # Backprop
-        for u in topo:
+        for u in reversed(topo):
             u._backward()
 
     # Use the above basic arithmetics to build the following.

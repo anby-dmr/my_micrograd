@@ -48,7 +48,7 @@ class Layer(Module):
 
     def __repr__(self):
         # Return a list, each element is a neuron's string representation
-        return f"Layer of [{", ".join(str(n) for n in self.neurons)}]"
+        return f"Layer of [{', '.join(str(n) for n in self.neurons)}]"
 
 class MLP(Module):
     def __init__(self, nin, nouts):
@@ -66,4 +66,4 @@ class MLP(Module):
         return [p for l in self.layers for p in l.parameters()]
 
     def __repr__(self):
-        return f"MLP of [{", ".join(str(l) for l in self.layers)}]"
+        return f"MLP of [{', '.join(str(l) for l in self.layers)}]"

@@ -21,4 +21,5 @@ Then, compute the gradient of each "Value" in the topological order.
 - Did not accumulate the gradient in the backward pass.
 - Did not set the gradient of the root node to 1.0 before the backward pass.
 - Did not set parameter "self" when define the class "Module".
+- In backward pass, should use "for u in reversed(topo)".
 - Class Layer should return a Value instead of a list [Value] when noutput is 1.
